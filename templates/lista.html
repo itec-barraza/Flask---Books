@@ -1,0 +1,32 @@
+{% extends "libros.html" %}
+    {% block contenido %}
+    <!-- Content -->
+    <table class="table table-hover table-dark">
+    <thead>            
+        <th>Libro</th>
+        <th>Autor</th>
+        <th>Genero</th>
+        <th>Editorial</th>
+    </thead>
+        
+    {% for libro in libros %}
+    <tr>
+        <td>{{libro.titulo}}</td>
+        <td>{{libro.autor}}</td>
+        <td>{{libro.genero}}</td>
+        <td>{{libro.editorial}}</td>
+        <td>
+            <a type="button" class="btn btn-secondary" href="{{url_for('editarLibro', libro_id = libro.id )}}">
+                <i class="far fa-edit"></i>           
+            </a> 
+            <a type="button" class="btn btn-secondary" href="{{url_for('eliminarLibro', libro_id = libro.id )}}">
+                <i class="far fa-trash-alt"></i>           
+            </a> 
+        </td>
+    </tr>
+    {% endfor %}
+    </table>
+    <a type="button" class="btn btn-secondary" href="{{url_for('nuevoLibro')}}">
+        <i class="fas fa-plus-circle fa-2x"></i>           
+    </a> 
+    {% endblock %}

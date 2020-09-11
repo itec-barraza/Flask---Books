@@ -1,0 +1,15 @@
+{% extends "libros.html" %}
+    {% block contenido %}
+    <!-- Content -->
+    <div class="bg-dark text-white p-2">
+        <h2 class="p-2"> Estás seguro que querés eliminar el libro {{libro.titulo}}? </h2>
+        <form action="#" method='post'>
+            <div class="btn-group pl-2">
+                <button type="submit" class="btn btn-danger"> Eliminar</button>
+                <a href='{{ url_for("mostrarLibros") }}'>
+                    <button type="button" class="btn btn-warning"> Cancelar</button>
+                </a>
+            </div>
+        </form>        
+    </div>
+    {% endblock %}

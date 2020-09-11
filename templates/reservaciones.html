@@ -1,0 +1,26 @@
+{% extends "libros.html" %}
+    {% block contenido %}
+    <!-- Content -->
+    <div class="bg-dark text-white">
+        <div class="form-group m-2 pt-2">
+            <h1 class=>Reservar un Libro</h1>
+            <label for="nombre">Titulo:</label>
+            <input type="text" class="form-control" name="nombre" placeholder="Nombre del Libro">
+            <label for="autor">Autor:</label>
+            <input type="text" class="form-control" name="autor" placeholder="Autor del Libro">
+            <label for="editorial">Editorial:</label>
+            <input type="text" class="form-control" name="editorial" placeholder="Editorial">
+            <label for="retiro" class="pt-4">Fecha de Retiro</label>
+            <input type="date" name="retiro" max="2020-12-10" min="2020-09-10" class="form-control">
+            <label for="devolucion">Fecha de Devolucion</label>
+            <input type="date" name="devolucion" min="2020-09-12" max="2020-12-31" class="form-control">
+
+            <a href='{{ url_for("mostrarLibros") }}'>
+                <div class="btn-group pt-3 pb-3 pl-1">
+                    <button type="submit" class="btn btn-success"> Guardar</button>
+                    <button type="button" class="btn btn-warning">Cancelar</button>
+                </div>
+            </a>
+        </div>
+    </div>
+    {% endblock %}
